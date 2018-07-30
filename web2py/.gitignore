@@ -1,0 +1,56 @@
+# for web2py
+cache
+databases
+errors
+sessions
+
+# inherit https://github.com/github/gitignore/blob/master/Python.gitignore
+
+*.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#misc
+!applications/welcome
+!applications/welcome/*
+!applications/examples
+!applications/examples/*
+!applications/admin
+!applications/admin/*
+applications/*/databases/*
+applications/*/sessions/*
+applications/*/errors/*
+applications/*/cache/*
+applications/*/uploads/*
+applications/*/private/*
+applications/*/static/temp
+applications/*/progress.log
+applications/examples/static/epydoc
+applications/examples/static/sphinx
+applications/admin/cron/cron.master
+c*.sublime-project
+*.sublime-workspace
+.idea/*
+site-packages/
+logs/
