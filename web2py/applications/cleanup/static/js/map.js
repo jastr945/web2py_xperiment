@@ -41,6 +41,11 @@ $(document).ready(function() {
     $("#info").addClass("invisible");
   });
 
+  // Closing the form
+  $("#close").click(function(e) {
+    $("#upload").addClass("invisible");
+  });
+
   // Getting data from California Coastal Commission Cleanup Day API upon click
   $("#getMarkers").click(function(e) {
       $(this).addClass("invisible");

@@ -33,8 +33,23 @@
     {{block head}}{{end}}
   </head>
   <body>
-    <button id="getMarkers">Load Cleanup Day Locations</button>
     <div id="info">Find over 900 beaches and waterways where you can contribute to California's largest volunteer event - the coastal cleanup! Load locations and see the organizer contact information and what to bring.<br><span id="gotit"><u>Got it [X]</u></span></div>
+    <button id="getMarkers">Load Cleanup Day Locations</button>
+    <form id="upload">
+      <div class="form-group">
+        <input type="text" class="form-control" id="lat" placeholder="Enter latitude">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="lon" placeholder="Enter longitude">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="description" placeholder="Enter event's description"></textarea>
+      </div>
+      <div class="buttons">
+        <button type="submit" class="btn btn-primary">Submit Event</button>
+        <div id="close"><u>CLOSE [X]</u></div>
+      </div>
+    </form>
     <div id="map"></div>
     <!-- The javascript =============================== -->
     <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>

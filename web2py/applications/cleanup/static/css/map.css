@@ -1,12 +1,15 @@
 body, html {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+.invisible {
+  display: none;
 }
 
 #map {
@@ -17,10 +20,6 @@ body, html {
   padding: 0;
 }
 
-.invisible {
-  display: none;
-}
-
 #info {
   position: absolute;
   z-index: 1;
@@ -28,13 +27,14 @@ body, html {
   color: #ffffff;
   font-size: 1em;
   width: 40vw;
-  margin-bottom: 70vh;
   padding: 1em;
   text-align: center;
+  margin-top: 5vh;
 }
 
-#gotit {
+#gotit, #close {
   cursor: pointer;
+  color: #ffffff;
 }
 
 #getMarkers {
@@ -44,6 +44,22 @@ body, html {
   color: #ffffff;
   font-size: 1.5em;
   cursor: pointer;
-  margin: auto;
+  margin-top: 30%;
   padding: 0.5em 1em;
+}
+
+#upload {
+  position: absolute;
+  z-index: 1;
+  margin-top: 40%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1em 0.5em;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
