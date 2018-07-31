@@ -44,14 +44,14 @@ body, html {
   color: #ffffff;
   font-size: 1.5em;
   cursor: pointer;
-  margin-top: 30%;
+  margin-top: 20%;
   padding: 0.5em 1em;
 }
 
 #upload {
   position: absolute;
   z-index: 1;
-  margin-top: 40%;
+  margin-top: 30%;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 1em 0.5em;
   border-radius: 5px;

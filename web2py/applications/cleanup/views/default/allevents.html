@@ -1,0 +1,12 @@
+
+{{if 'message' in globals():}}
+<h3>{{=message}}</h3>
+{{pass}}
+
+<h1>
+  Events
+</h1>
+<h2>
+{{=A(T('Back to the map'), _href=URL('index'))}}
+</h2>
+{{=grid}}

@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+<h2>Events</h2>
+
+<table>
+   {{for event in events:}}
+   <tr>
+      <td>{{ = A(event.lon, _href = URL('contacts', args = event.id))}}</td>
+   </tr>
+</table>

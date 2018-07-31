@@ -1,0 +1,20 @@
+{{extend 'layout.html'}}
+{{if 'message' in globals():}}
+<h3>{{=message}}</h3>
+{{pass}}
+<h1>
+    Active Tasks
+</h1>
+<h2>
+{{=A(T('Assignments'), _href=URL('assignments'))}} 
+{{=A(T('Team'), _href=URL('team'))}}
+{{=A(T('All tasks'), _href=URL('alltasks'))}}
+</h2>
+{{if db(db.auth_user).isempty():}}
+<h2>
+Please add at least 1 {{=A(T('Team'), _href=URL('team'))}} 
+member before creating any tasks.    
+</h2>
+{{else:}}
+{{=grid}}
+{{pass}}

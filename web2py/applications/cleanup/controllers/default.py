@@ -9,6 +9,9 @@ def index():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+def allevents():
+    return dict(grid=SQLFORM.grid(db.events, user_signature=False))
+
 # ---- API (example) -----
 @auth.requires_login()
 def api_get_user_email():
@@ -27,7 +30,7 @@ def grid():
 # ---- Embedded wiki (example) ----
 def wiki():
     auth.wikimenu() # add the wiki to the menu
-    return auth.wiki() 
+    return auth.wiki()
 
 # ---- Action for login/register/etc (required for auth) -----
 def user():

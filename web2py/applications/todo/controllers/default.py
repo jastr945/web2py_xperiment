@@ -4,11 +4,6 @@
 # this file is released under public domain and you can use without limitations
 # -------------------------------------------------------------------------
 
-# ---- example index page ----
-def index():
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to my first app!'))
-
 # ---- API (example) -----
 @auth.requires_login()
 def api_get_user_email():
@@ -56,3 +51,28 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
+
+def team():
+    return dict(
+        grid=SQLFORM.grid(
+        db.auth_user,
+        user_signature=False))
+
+def alltasks():
+    return dict(
+        grid=SQLFORM.grid(
+            db.task,
+            user_signature=False))
+
+def assignments():
+    return dict(
+        grid=SQLFORM.smartgrid(
+            db.auth_user,
+            linked_tables=['task'],
+            ))
+
+def index():
+    return dict(
+        grid=SQLFORM.grid(
+            db.task.completed == False,
+            user_signature=False))

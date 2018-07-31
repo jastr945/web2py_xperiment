@@ -15,6 +15,10 @@ def index():
     return response.render()
 
 
+def events():
+    return HTML(BODY(H1('Events recorded'), db().select(db.select.ALL)))
+
+
 @cache.action(time_expire=300, cache_model=cache.ram, quick='P')
 def what():
     import urllib

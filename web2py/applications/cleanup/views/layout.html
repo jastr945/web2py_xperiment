@@ -13,7 +13,7 @@
           initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
           user-scalable = yes allows the user to zoom in -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coastal Cleanup</title>
+    <title>{{=response.title or request.application}}</title>
     <!-- http://dev.w3.org/html5/markup/meta.name.html -->
     <meta name="application-name" content="{{=request.application}}">
     <!-- Speaking of Google, don't forget to set your site up:
@@ -33,24 +33,23 @@
     {{block head}}{{end}}
   </head>
   <body>
-    <div id="info">Find over 900 beaches and waterways where you can contribute to California's largest volunteer event - the coastal cleanup! Load locations and see the organizer contact information and what to bring.<br><span id="gotit"><u>Got it [X]</u></span></div>
-    <button id="getMarkers">Load Cleanup Day Locations</button>
-    <form id="upload">
-      <div class="form-group">
-        <input type="text" class="form-control" id="lat" placeholder="Enter latitude">
+    <!-- Masthead ===================================== -->
+    {{block header}}
+    {{end}}
+    <!-- Main ========================================= -->
+    {{block map}}
+    {{end}}
+    {{block footer}} <!-- this is default footer -->
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="copyright pull-left">Polina Jastrzebska {{=T('Copyright')}} &#169; {{=request.now.year}}</div>
+          <div id="poweredBy" class="pull-right">
+            {{=T('Powered by')}}
+            <a href="http://www.web2py.com/">web2py</a>
+          </div>
       </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="lon" placeholder="Enter longitude">
-      </div>
-      <div class="form-group">
-        <textarea class="form-control" id="description" placeholder="Enter event's description"></textarea>
-      </div>
-      <div class="buttons">
-        <button type="submit" class="btn btn-primary">Submit Event</button>
-        <div id="close"><u>CLOSE [X]</u></div>
-      </div>
-    </form>
-    <div id="map"></div>
+    </footer>
+    {{end}}
     <!-- The javascript =============================== -->
     <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
     <script src="{{=URL('static','js/web2py-bootstrap4.js')}}"></script>
