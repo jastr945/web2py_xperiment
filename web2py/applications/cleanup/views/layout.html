@@ -33,6 +33,26 @@
     {{block head}}{{end}}
   </head>
   <body>
+    <!--Navbar ===================================== -->
+    <nav class="navbar navbar-light">
+      <div class="navbar-brand">{{=A(T('Beach Cleanup Day Locations'), _href=URL('index'))}}</div>
+      <div id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            {{=A(T('Home'), _href=URL('index'))}}
+          </li>
+          <li class="nav-item">
+            <div class="nav-link" id="about">About</div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link" id="form">Submit Event</div>
+          </li>
+          <li class="nav-item">
+            {{=A(T('Database'), _href=URL('allevents'))}}
+          </li>
+        </ul>
+      </div>
+    </nav>
     <!-- Masthead ===================================== -->
     {{block header}}
     {{end}}

@@ -8,6 +8,18 @@ body, html {
   padding: 0;
 }
 
+.navbar, .navbar-nav {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  width:100%;
+}
+
+.nav-item {
+  margin: auto 1em;
+  cursor: pointer;
+}
+
 .invisible {
   display: none;
 }
@@ -29,7 +41,8 @@ body, html {
   width: 40vw;
   padding: 1em;
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 10vh;
+  border-radius: 5px;
 }
 
 #gotit, #close {
