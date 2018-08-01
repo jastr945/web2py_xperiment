@@ -6,6 +6,7 @@
 
 # ---- example index page ----
 def index():
+    response.files.append(URL('static', 'css/map.css'))
     return dict(form=SQLFORM(db.events).process())
 
 def allevents():
