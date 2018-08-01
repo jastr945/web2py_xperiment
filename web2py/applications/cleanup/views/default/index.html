@@ -1,22 +1,46 @@
 {{extend 'layout.html'}}
 
 {{block map}}
+<!--Navbar ===================================== -->
+<nav class="navbar navbar-light">
+  <div class="navbar-brand">{{=A(T('Beach Cleanup Day Locations'), _href=URL('index'))}}</div>
+  <div id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        {{=A(T('Home'), _href=URL('index'))}}
+      </li>
+      <li class="nav-item">
+        <div class="nav-link" id="about">About</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link" id="form">Submit Event</div>
+      </li>
+      <li class="nav-item">
+        {{=A(T('Database'), _href=URL('allevents'))}}
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--Info Window ===================================== -->
 <div id="info">Find over 900 beaches and waterways where you can contribute to California's largest volunteer event - the coastal cleanup! Load locations and see the organizer contact information and what to bring.<br><span id="gotit"><u>Got it [X]</u></span></div>
+<!--Get Map Button ===================================== -->
 <button id="getMarkers">Load Cleanup Day Locations</button>
-<form id="upload">
+<!--The Upload Form ===================================== -->
+{{=form.custom.begin}}
   <div class="form-group">
-    <input type="text" class="form-control" id="lat" placeholder="Enter latitude">
+    <input type="text" name="lat" class="form-control" id="lat" placeholder="Enter latitude">
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="lon" placeholder="Enter longitude">
+    <input type="text" name="lon" class="form-control" id="lon" placeholder="Enter longitude">
   </div>
   <div class="form-group">
-    <textarea class="form-control" id="description" placeholder="Enter event's description"></textarea>
+    <textarea class="form-control" name="description" id="description" placeholder="Enter event's description"></textarea>
   </div>
   <div class="buttons">
-    <button type="submit" class="btn btn-primary">Submit Event</button>
+    {{=form.custom.submit}}
     <div id="close"><u>CLOSE [X]</u></div>
   </div>
-</form>
+{{=form.custom.end}}
+<!--Google Map ===================================== -->
 <div id="map"></div>
 {{end}}

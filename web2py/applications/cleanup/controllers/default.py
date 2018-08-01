@@ -6,11 +6,45 @@
 
 # ---- example index page ----
 def index():
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
+    return dict(form=SQLFORM(db.events).process())
 
 def allevents():
-    return dict(grid=SQLFORM.grid(db.events, user_signature=False))
+    grid=SQLFORM.grid(
+                    db.events,
+                    searchable=True,
+                    sortable=True,
+                    paginate=20,
+                    deletable=True,
+                    editable=True,
+                    details=True,
+                    selectable=None,
+                    create=True,
+                    links_in_grid=True,
+                    upload='<default>',
+                    args=[],
+                    user_signature=True,
+                    maxtextlengths={},
+                    maxtextlength=20,
+                    onvalidation=None,
+                    oncreate=None,
+                    onupdate=None,
+                    ondelete=None,
+                    sorter_icons=(XML('&#x2191;'), XML('&#x2193;')),
+                    ui = 'web2py',
+                    showbuttontext=True,
+                    _class="web2py_grid",
+                    formname='web2py_grid',
+                    search_widget='default',
+                    ignore_rw = False,
+                    formstyle = 'table3cols',
+                    exportclasses = None,
+                    formargs={},
+                    createargs={},
+                    editargs={},
+                    viewargs={},
+                    buttons_placement = 'right',
+                    links_placement = 'right')
+    return locals()
 
 # ---- API (example) -----
 @auth.requires_login()

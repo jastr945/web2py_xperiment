@@ -48,19 +48,19 @@ $(document).ready(function() {
 
   // Closing the form
   $("#close").click(function(e) {
-    $("#upload").addClass("invisible");
+    $("form").addClass("invisible");
   });
 
   // Opening the form from the navbar
   $("#form").click(function(e) {
-    $("#upload").removeClass("invisible");
+    $("form").removeClass("invisible");
   });
 
   // Getting data from California Coastal Commission Cleanup Day API upon click
   $("#getMarkers").click(function(e) {
       $(this).addClass("invisible");
       $("#info").addClass("invisible");
-      $("#upload").addClass("invisible");
+      $("form").addClass("invisible");
       e.preventDefault();
       $.ajax({
         url: "https://api.coastal.ca.gov/ccd/v1/locations",
